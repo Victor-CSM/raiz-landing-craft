@@ -1,41 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Barbearia Raiz Design System - Deep Green & Black Theme */
 
 @layer base {
   :root {
+    /* Background & Surface Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 0%;
+    --surface: 0 0% 98%;
+    
+    /* Brand Colors - Deep Green & Black */
+    --brand-green: 156 64% 15%;        /* #0f3d2e */
+    --brand-green-light: 156 40% 25%;  /* Lighter variant */
+    --brand-green-dark: 156 80% 10%;   /* Darker variant */
+    --brand-black: 0 0% 0%;            /* #000000 */
+    --brand-white: 0 0% 100%;          /* #ffffff */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-black)) 0%, hsl(var(--brand-green)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--brand-green)) 0%, hsl(var(--brand-green-dark)) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(var(--brand-green-light)) 0%, hsl(var(--brand-green)) 100%);
+    
+    /* Semantic Colors */
+    --primary: var(--brand-green);
+    --primary-foreground: var(--brand-white);
+    --secondary: 0 0% 95%;
+    --secondary-foreground: var(--brand-black);
+    --accent: var(--brand-green-light);
+    --accent-foreground: var(--brand-white);
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* UI Colors */
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: var(--brand-green);
+    --card: var(--brand-white);
+    --card-foreground: var(--brand-black);
+    --popover: var(--brand-white);
+    --popover-foreground: var(--brand-black);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--brand-white);
+    
+    /* Effects & Shadows */
+    --shadow-brand: 0 10px 30px -10px hsl(var(--brand-green) / 0.3);
+    --shadow-elegant: 0 20px 40px -15px hsl(var(--brand-black) / 0.2);
+    --shadow-card: 0 4px 15px hsl(var(--brand-black) / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+    
+    /* Spacing */
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
@@ -94,12 +114,125 @@ All colors MUST be HSL.
   }
 }
 
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Text Animations */
+  .hero-text {
+    @apply animate-fade-in;
+  }
+  
+  /* Brand Button Styles */
+  .btn-brand {
+    @apply relative overflow-hidden;
+    background: var(--gradient-accent);
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-brand);
+  }
+  
+  .btn-brand:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .btn-brand:hover::before {
+    @apply opacity-100;
+  }
+  
+  .btn-brand::before {
+    @apply absolute inset-0 opacity-0;
+    content: '';
+    background: var(--gradient-card);
+    transition: var(--transition-smooth);
+  }
+  
+  /* Outline Button */
+  .btn-outline {
+    @apply border-2 border-white text-white bg-transparent hover:bg-white hover:text-brand-black;
+    transition: var(--transition-smooth);
+  }
+  
+  /* Service Cards */
+  .service-card {
+    @apply p-8 rounded-lg bg-card border border-border hover:shadow-lg;
+    transition: var(--transition-smooth);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Testimonial Cards */
+  .testimonial-card {
+    @apply p-6 bg-card rounded-lg border border-border;
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Pricing Cards */
+  .pricing-card {
+    @apply p-8 rounded-lg border border-border bg-card hover:shadow-lg;
+    transition: var(--transition-smooth);
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Featured Pricing Card */
+  .pricing-featured {
+    background: var(--gradient-card);
+    @apply text-white border-brand-green;
+    transform: scale(1.05);
+  }
+  
+  /* Contact Form */
+  .form-input {
+    @apply w-full px-4 py-3 border border-border rounded-lg bg-input focus:outline-none focus:ring-2 focus:ring-primary;
+    transition: var(--transition-fast);
+  }
+  
+  /* Smooth Scroll Animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
