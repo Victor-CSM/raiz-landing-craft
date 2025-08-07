@@ -4,22 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Scissors, 
-  Users, 
-  Star, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Instagram, 
-  Clock,
-  Shield,
-  Award,
-  Check,
-  ArrowRight,
-  Menu,
-  X
-} from "lucide-react";
+import { Scissors, Users, Star, MapPin, Phone, Mail, Instagram, Clock, Shield, Award, Check, ArrowRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 // Import generated images
@@ -28,18 +13,16 @@ import logoImage from "@/assets/logo-barbearia-raiz.png";
 import joaoImage from "@/assets/testimonial-joao.jpg";
 import rafaelImage from "@/assets/testimonial-rafael.jpg";
 import lucasImage from "@/assets/testimonial-lucas.jpg";
-
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
     setIsMenuOpen(false);
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-black/90 backdrop-blur-sm border-b border-brand-green/20">
         <div className="container mx-auto px-4 py-4">
@@ -62,19 +45,13 @@ const Index = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="md:hidden text-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
+            <Button variant="ghost" size="icon" className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X /> : <Menu />}
             </Button>
           </div>
 
           {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 space-y-4">
+          {isMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-4">
               <button onClick={() => scrollToSection('home')} className="block text-white hover:text-brand-green transition-colors">Home</button>
               <button onClick={() => scrollToSection('servicos')} className="block text-white hover:text-brand-green transition-colors">Serviços</button>
               <button onClick={() => scrollToSection('precos')} className="block text-white hover:text-brand-green transition-colors">Preços</button>
@@ -83,19 +60,14 @@ const Index = () => {
               <Button variant="brand" size="sm" onClick={() => scrollToSection('contato')} className="w-full">
                 Agendar Agora
               </Button>
-            </div>
-          )}
+            </div>}
         </div>
       </nav>
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Barbearia Raiz - Professional Barbershop"
-            className="w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="Barbearia Raiz - Professional Barbershop" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
         </div>
         
@@ -244,17 +216,11 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="testimonial-card fade-in-up stagger-1">
               <div className="flex items-center space-x-4 mb-6">
-                <img 
-                  src={joaoImage} 
-                  alt="João M." 
-                  className="w-16 h-16 rounded-full object-cover"
-                />
+                <img src={joaoImage} alt="João M." className="w-16 h-16 rounded-full object-cover" />
                 <div>
                   <h4 className="font-bold text-brand-black">João M.</h4>
                   <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
                 </div>
               </div>
@@ -266,17 +232,11 @@ const Index = () => {
 
             <Card className="testimonial-card fade-in-up stagger-2">
               <div className="flex items-center space-x-4 mb-6">
-                <img 
-                  src={rafaelImage} 
-                  alt="Rafael T." 
-                  className="w-16 h-16 rounded-full object-cover"
-                />
+                <img src={rafaelImage} alt="Rafael T." className="w-16 h-16 rounded-full object-cover" />
                 <div>
                   <h4 className="font-bold text-brand-black">Rafael T.</h4>
                   <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
                 </div>
               </div>
@@ -288,17 +248,11 @@ const Index = () => {
 
             <Card className="testimonial-card fade-in-up stagger-3">
               <div className="flex items-center space-x-4 mb-6">
-                <img 
-                  src={lucasImage} 
-                  alt="Lucas S." 
-                  className="w-16 h-16 rounded-full object-cover"
-                />
+                <img src={lucasImage} alt="Lucas S." className="w-16 h-16 rounded-full object-cover" />
                 <div>
                   <h4 className="font-bold text-brand-black">Lucas S.</h4>
                   <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
                 </div>
               </div>
@@ -328,13 +282,13 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="aspect-square bg-muted rounded-lg fade-in-up" style={{animationDelay: `${i * 0.1}s`}}>
+            {[...Array(6)].map((_, i) => <div key={i} className="aspect-square bg-muted rounded-lg fade-in-up" style={{
+            animationDelay: `${i * 0.1}s`
+          }}>
                 <div className="w-full h-full bg-gradient-accent rounded-lg flex items-center justify-center">
                   <Scissors className="h-8 w-8 text-white opacity-50" />
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -370,7 +324,7 @@ const Index = () => {
             <Card className="pricing-card pricing-featured fade-in-up stagger-2">
               <div className="text-center">
                 <Badge className="mb-4 bg-white text-brand-green">MAIS POPULAR</Badge>
-                <h3 className="text-2xl font-bold mb-4">Combo Completo</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">Combo Completo</h3>
                 <div className="text-4xl font-black mb-6">R$ 60</div>
                 <ul className="space-y-3 mb-8 opacity-90">
                   <li>• Corte profissional</li>
@@ -513,23 +467,13 @@ const Index = () => {
                   </h3>
                   <form className="space-y-6">
                     <div>
-                      <Input 
-                        placeholder="Seu nome" 
-                        className="form-input"
-                      />
+                      <Input placeholder="Seu nome" className="form-input" />
                     </div>
                     <div>
-                      <Input 
-                        placeholder="WhatsApp" 
-                        className="form-input"
-                      />
+                      <Input placeholder="WhatsApp" className="form-input" />
                     </div>
                     <div>
-                      <Textarea 
-                        placeholder="Sua mensagem" 
-                        rows={4}
-                        className="form-input"
-                      />
+                      <Textarea placeholder="Sua mensagem" rows={4} className="form-input" />
                     </div>
                     <Button variant="cta" size="lg" className="w-full">
                       Enviar Mensagem
@@ -587,8 +531,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
