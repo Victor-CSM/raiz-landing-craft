@@ -391,7 +391,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button variant="heroOutline" size="lg" className="mt-8" style="margin-left: 30px;">
+              <Button variant="heroOutline" size="lg" className="mt-8">
                 <MapPin className="mr-2" />
                 Como Chegar
               </Button>
