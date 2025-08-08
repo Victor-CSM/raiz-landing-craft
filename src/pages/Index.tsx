@@ -275,7 +275,7 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Confira nossos trabalhos e se inspire para o seu próximo visual
             </p>
-             <a href="https://www.instagram.com/moreiracvictor/">
+             <a href="https://www.instagram.com/moreiracvictor/" target="_blank">
               <Button variant="brand" size="lg">
                 <Instagram className="mr-2" />
                 Siga no Instagram @moreiracvictor
