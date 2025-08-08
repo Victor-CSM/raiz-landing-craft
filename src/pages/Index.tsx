@@ -277,7 +277,7 @@ const Index = () => {
             </p>
             <Button variant="brand" size="lg">
               <Instagram className="mr-2" />
-              Siga no Instagram @barbeariaraiz
+              Siga no Instagram @moreiracvictor
             </Button>
           </div>
 
