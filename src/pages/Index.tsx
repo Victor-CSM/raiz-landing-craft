@@ -275,10 +275,12 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Confira nossos trabalhos e se inspire para o seu próximo visual
             </p>
-            <Button variant="brand" href="https://www.instagram.com/moreiracvictor/" size="lg">
-              <Instagram className="mr-2" />
-              Siga no Instagram @moreiracvictor
-            </Button>
+             <a href="https://www.instagram.com/moreiracvictor/">
+              <Button variant="brand" size="lg">
+                <Instagram className="mr-2" />
+                Siga no Instagram @moreiracvictor
+              </Button>
+            </a>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
