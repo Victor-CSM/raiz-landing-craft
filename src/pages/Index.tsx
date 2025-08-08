@@ -74,7 +74,7 @@ const Index = () => {
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="hero-text space-y-6">
             <h1 className="text-5xl md:text-7xl font-black leading-tight">
-              Barbearia <span className="text-brand-green">Raiz</span>
+              Barbearia <span className="text-brand-green text-white">Raiz</span>
             </h1>
             <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto">
               Onde o estilo encontra a tradição
