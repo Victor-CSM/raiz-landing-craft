@@ -477,9 +477,11 @@ const Index = () => {
                     <div>
                       <Textarea placeholder="Sua mensagem" rows={4} className="form-input" />
                     </div>
-                    <Button variant="cta" size="lg" className="w-full">
-                      Enviar Mensagem
-                    </Button>
+                    <a href="https://wa.me/+5521998307400">
+                      <Button variant="cta" size="lg" className="w-full">
+                        Enviar Mensagem
+                      </Button>
+                    </a>
                   </form>
                 </Card>
               </div>
