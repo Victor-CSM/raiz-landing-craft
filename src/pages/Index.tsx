@@ -389,42 +389,35 @@ const Index = () => {
       {/* Location Section */}
       <section className="py-20 bg-brand-black text-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="fade-in-up">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Visite-nos
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-brand-green mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Endereço</h4>
-                    <p className="text-gray-300">
-                      Rua da Tradição, 123 – Centro<br />
-                      Niterói, RJ
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <Clock className="h-6 w-6 text-brand-green mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Horário de Funcionamento</h4>
-                    <p className="text-gray-300">
-                      Segunda a Sexta: 8h às 19h<br />
-                      Sábado: 8h às 17h<br />
-                      Domingo: Fechado
-                    </p>
-                  </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-12 fade-in-up">
+              Visite-nos
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              <div className="fade-in-up">
+                <div className="bg-brand-green/10 border border-brand-green/20 rounded-lg p-6">
+                  <MapPin className="h-8 w-8 text-brand-green mx-auto mb-4" />
+                  <h4 className="font-semibold text-xl mb-3 text-white">Endereço</h4>
+                  <p className="text-gray-300 leading-relaxed">
+                    Rua da Tradição, 123 – Centro<br />
+                    Niterói, RJ
+                  </p>
                 </div>
               </div>
               
-              <Button variant="heroOutline" size="lg" className="mt-8">
-                <MapPin className="mr-2" />
-                Como Chegar
-              </Button>
+              <div className="fade-in-up stagger-1">
+                <div className="bg-brand-green/10 border border-brand-green/20 rounded-lg p-6">
+                  <Clock className="h-8 w-8 text-brand-green mx-auto mb-4" />
+                  <h4 className="font-semibold text-xl mb-3 text-white">Horário de Funcionamento</h4>
+                  <p className="text-gray-300 leading-relaxed">
+                    Segunda a Sexta: 8h às 19h<br />
+                    Sábado: 8h às 17h<br />
+                    Domingo: Fechado
+                  </p>
+                </div>
+              </div>
             </div>
-            
           </div>
         </div>
       </section>
