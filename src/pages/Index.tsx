@@ -13,6 +13,7 @@ import logoImage from "@/assets/logo-barbearia-raiz.png";
 import joaoImage from "@/assets/testimonial-joao.jpg";
 import rafaelImage from "@/assets/testimonial-rafael.jpg";
 import lucasImage from "@/assets/testimonial-lucas.jpg";
+import corte01Image from "@/assets/corte01.jpg";
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -295,8 +296,11 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {[...Array(6)].map((_, i) => <div key={i} className="aspect-square bg-muted rounded-lg fade-in-up" style={{
-            animationDelay: `${i * 0.1}s`
+            <div className="aspect-square bg-muted rounded-lg fade-in-up overflow-hidden">
+              <img src={corte01Image} alt="Corte masculino" className="w-full h-full object-cover" />
+            </div>
+            {[...Array(5)].map((_, i) => <div key={i + 1} className="aspect-square bg-muted rounded-lg fade-in-up" style={{
+            animationDelay: `${(i + 1) * 0.1}s`
           }}>
                 <div className="w-full h-full bg-gradient-accent rounded-lg flex items-center justify-center">
                   <Scissors className="h-8 w-8 text-white opacity-50" />
