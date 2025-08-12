@@ -425,15 +425,6 @@ const Index = () => {
               </Button>
             </div>
             
-            <div className="fade-in-up stagger-1">
-              <div className="bg-muted rounded-lg h-80 flex items-center justify-center">
-                <div className="text-center text-brand-black">
-                  <MapPin className="h-12 w-12 mx-auto mb-4 text-brand-green" />
-                  <p>Mapa Interativo</p>
-                  <p className="text-sm text-muted-foreground">Google Maps será integrado aqui</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
