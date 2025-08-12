@@ -15,12 +15,23 @@ import rafaelImage from "@/assets/testimonial-rafael.jpg";
 import lucasImage from "@/assets/testimonial-lucas.jpg";
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    whatsapp: '',
+    message: ''
+  });
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({
       behavior: 'smooth'
     });
     setIsMenuOpen(false);
+  };
+
+  const handleSendMessage = () => {
+    const message = `Olá! Meu nome é ${formData.name}.%0A${formData.message}%0A%0AContato: ${formData.whatsapp}`;
+    const whatsappUrl = `https://wa.me/+5521998307400?text=${message}`;
+    window.open(whatsappUrl, '_blank');
   };
   return <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -467,22 +478,36 @@ const Index = () => {
                   <h3 className="text-2xl font-bold text-brand-black mb-6">
                     Envie uma Mensagem
                   </h3>
-                  <form className="space-y-6">
-                    <div>
-                      <Input placeholder="Seu nome" className="form-input" />
-                    </div>
-                    <div>
-                      <Input placeholder="WhatsApp" className="form-input" />
-                    </div>
-                    <div>
-                      <Textarea placeholder="Sua mensagem" rows={4} className="form-input" />
-                    </div>
-                    <a href="https://wa.me/+5521998307400">
-                      <Button size="lg" className="w-full">
-                        Enviar Mensagem
-                      </Button>
-                    </a>
-                  </form>
+                   <form className="space-y-6">
+                     <div>
+                       <Input 
+                         placeholder="Seu nome" 
+                         className="form-input" 
+                         value={formData.name}
+                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                       />
+                     </div>
+                     <div>
+                       <Input 
+                         placeholder="WhatsApp" 
+                         className="form-input" 
+                         value={formData.whatsapp}
+                         onChange={(e) => setFormData(prev => ({ ...prev, whatsapp: e.target.value }))}
+                       />
+                     </div>
+                     <div>
+                       <Textarea 
+                         placeholder="Sua mensagem" 
+                         rows={4} 
+                         className="form-input"
+                         value={formData.message}
+                         onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                       />
+                     </div>
+                     <Button size="lg" className="w-full" onClick={handleSendMessage}>
+                       Enviar Mensagem
+                     </Button>
+                   </form>
                 </Card>
               </div>
             </div>
