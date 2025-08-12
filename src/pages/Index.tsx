@@ -14,6 +14,11 @@ import joaoImage from "@/assets/testimonial-joao.jpg";
 import rafaelImage from "@/assets/testimonial-rafael.jpg";
 import lucasImage from "@/assets/testimonial-lucas.jpg";
 import corte01Image from "@/assets/corte01.jpg";
+import corte02Image from "@/assets/corte02.jpg";
+import corte03Image from "@/assets/corte03.jpg";
+import corte04Image from "@/assets/corte04.jpg";
+import corte05Image from "@/assets/corte05.jpg";
+import corte06Image from "@/assets/corte06.jpg";
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -297,15 +302,23 @@ const Index = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             <div className="aspect-square bg-muted rounded-lg fade-in-up overflow-hidden">
-              <img src={corte01Image} alt="Corte masculino" className="w-full h-full object-cover" />
+              <img src={corte01Image} alt="Corte masculino 1" className="w-full h-full object-cover" />
             </div>
-            {[...Array(5)].map((_, i) => <div key={i + 1} className="aspect-square bg-muted rounded-lg fade-in-up" style={{
-            animationDelay: `${(i + 1) * 0.1}s`
-          }}>
-                <div className="w-full h-full bg-gradient-accent rounded-lg flex items-center justify-center">
-                  <Scissors className="h-8 w-8 text-white opacity-50" />
-                </div>
-              </div>)}
+            <div className="aspect-square bg-muted rounded-lg fade-in-up overflow-hidden" style={{ animationDelay: "0.1s" }}>
+              <img src={corte02Image} alt="Corte masculino 2" className="w-full h-full object-cover" />
+            </div>
+            <div className="aspect-square bg-muted rounded-lg fade-in-up overflow-hidden" style={{ animationDelay: "0.2s" }}>
+              <img src={corte03Image} alt="Corte masculino 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="aspect-square bg-muted rounded-lg fade-in-up overflow-hidden" style={{ animationDelay: "0.3s" }}>
+              <img src={corte04Image} alt="Corte masculino 4" className="w-full h-full object-cover" />
+            </div>
+            <div className="aspect-square bg-muted rounded-lg fade-in-up overflow-hidden" style={{ animationDelay: "0.4s" }}>
+              <img src={corte05Image} alt="Corte masculino 5" className="w-full h-full object-cover" />
+            </div>
+            <div className="aspect-square bg-muted rounded-lg fade-in-up overflow-hidden" style={{ animationDelay: "0.5s" }}>
+              <img src={corte06Image} alt="Corte masculino 6" className="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
       </section>
