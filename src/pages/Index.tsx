@@ -104,7 +104,7 @@ const Index = () => {
                 Agende Seu Corte
                 <ArrowRight className="ml-2" />
               </Button>
-              <Button variant="hero" size="xl" onClick={() => scrollToSection('galeria')}>
+              <Button variant="heroOutline" size="xl" onClick={() => scrollToSection('galeria')}>
                 Ver Galeria
               </Button>
             </div>

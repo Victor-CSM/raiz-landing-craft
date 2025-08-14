@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Barbearia Raiz custom variants
         hero: "bg-gradient-accent text-white font-semibold shadow-brand hover:shadow-elegant hover:-translate-y-1 transition-all duration-300",
-        heroOutline: "border-2 border-white text-white bg-transparent font-semibold hover:bg-white hover:text-brand-black transition-all duration-300",
+        heroOutline: "border-2 border-white text-white bg-transparent font-semibold hover:bg-white hover:text-brand-black hover:-translate-y-1 transition-all duration-300",
         brand: "bg-brand-green text-white font-semibold hover:bg-brand-green-dark shadow-card hover:shadow-brand transition-all duration-300",
         cta: "bg-gradient-card text-white font-bold uppercase tracking-wide hover:shadow-elegant hover:-translate-y-1 transition-all duration-300",
       },
