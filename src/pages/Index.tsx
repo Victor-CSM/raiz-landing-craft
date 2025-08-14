@@ -352,7 +352,7 @@ const Index = () => {
             </Card>
 
             <Card className="pricing-card pricing-featured fade-in-up stagger-2">
-              <div className="text-center">
+              <div className="text-center text-white">
                 <Badge className="mb-4 bg-white text-brand-green">MAIS POPULAR</Badge>
                 <h3 className="text-2xl font-bold mb-4 text-white">Combo Completo</h3>
                 <div className="text-4xl font-black mb-6">R$ 60</div>
